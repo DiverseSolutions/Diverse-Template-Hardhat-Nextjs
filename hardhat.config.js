@@ -31,19 +31,93 @@ module.exports = {
     spacing: 2,
     pretty: true,
   },
+  networks: {
+    ethereum: {
+      url: process.env.ETHEREUM_URL,
+      chainId: 1,
+      accounts: {
+        mnemonic : process.env.MNEMONIC,
+      }
+    },
+    bsc: {
+      url: process.env.BSC_URL,
+      chainId: 56,
+      accounts: {
+        mnemonic : process.env.MNEMONIC,
+      }
+    },
+    polygon: {
+      url: process.env.POLYGON_URL,
+      chainId: 137,
+      accounts: {
+        mnemonic : process.env.MNEMONIC,
+      }
+    },
+    avalanche: {
+      url: process.env.AVALANCHE_URL,
+      chainId: 43114,
+      accounts: {
+        mnemonic : process.env.MNEMONIC,
+      }
+    },
+    fantom: {
+      url: process.env.FANTOM_URL,
+      chainId: 250,
+      accounts: {
+        mnemonic : process.env.MNEMONIC,
+      }
+    },
+
+
+    rinkeby: {
+      url: process.env.RINKEBY_TESTNET_URL,
+      chainId: 4,
+      accounts: {
+        mnemonic : process.env.MNEMONIC,
+      }
+    },
+    bscTestnet: {
+      url: process.env.BSC_TESTNET_URL,
+      chainId: 97,
+      accounts: {
+        mnemonic : process.env.MNEMONIC,
+      }
+    },
+    mumbai: {
+      url: process.env.MUMBAI_TESTNET_URL,
+      chainId: 80001,
+      accounts: {
+        mnemonic : process.env.MNEMONIC,
+      }
+    },
+    fuji: {
+      url: process.env.FUJI_TESTNET_URL,
+      chainId: 43113,
+      accounts: {
+        mnemonic : process.env.MNEMONIC,
+      }
+    },
+    fantomTestnet: {
+      url: process.env.FANTOM_TESTNET_URL,
+      chainId: 4002,
+      accounts: {
+        mnemonic : process.env.MNEMONIC,
+      }
+    },
+  },
   etherscan: {
     apiKey: {
-      mainnet: process.env.ETHERSCAN_API_KEY,
-      polygon: process.env.POLYGON_API_KEY,
-      bsc: process.env.BSC_API_KEY,
-      opera: process.env.FANTOM_API_KEY,
-      avalanche: process.env.AVALANCHE_API_KEY,
+      mainnet: process.env.ETHEREUM_ETHERSCAN_API_KEY,
+      polygon: process.env.POLYGON_ETHERSCAN_API_KEY,
+      bsc: process.env.BSC_ETHERSCAN_API_KEY,
+      opera: process.env.FANTOM_ETHERSCAN_API_KEY,
+      avalanche: process.env.AVALANCHE_ETHERSCAN_API_KEY,
 
-      rinkeby: process.env.RINKEBY_TESTNET_API_KEY,
-      polygonMumbai: process.env.MUMBAI_TESTNET_API_KEY,
-      bscTestnet: process.env.BSC_TESTNET_API_KEY,
-      ftmTestnet: process.env.FANTOM_TESTNET_API_KEY,
-      avalancheFujiTestnet: process.env.FUJI_TESTNET_API_KEY,
+      rinkeby: process.env.RINKEBY_TESTNET_ETHERSCAN_API_KEY,
+      polygonMumbai: process.env.MUMBAI_TESTNET_ETHERSCAN_API_KEY,
+      bscTestnet: process.env.BSC_TESTNET_ETHERSCAN_API_KEY,
+      ftmTestnet: process.env.FANTOM_TESTNET_ETHERSCAN_API_KEY,
+      avalancheFujiTestnet: process.env.FUJI_TESTNET_ETHERSCAN_API_KEY,
 
     }
   }

@@ -10,12 +10,13 @@ endif
 set shortmess=aoO
 badd +4 package.json
 badd +1 package-lock.json
-badd +30 hardhat.config.js
-badd +1 .env
+badd +40 hardhat.config.js
+badd +7 .env
+badd +0 .env-example
 argglobal
 %argdel
 $argadd ~/.config/fish/conf.d/omf.fish
-edit hardhat.config.js
+edit .env-example
 let s:save_splitbelow = &splitbelow
 let s:save_splitright = &splitright
 set splitbelow splitright
@@ -46,19 +47,19 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 30 - ((18 * winheight(0) + 19) / 38)
+let s:l = 4 - ((3 * winheight(0) + 19) / 38)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 30
-normal! 015|
+keepjumps 4
+normal! 0
 wincmd w
 argglobal
-if bufexists(".env") | buffer .env | else | edit .env | endif
+if bufexists("hardhat.config.js") | buffer hardhat.config.js | else | edit hardhat.config.js | endif
 if &buftype ==# 'terminal'
-  silent file .env
+  silent file hardhat.config.js
 endif
-balt hardhat.config.js
+balt .env
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -69,13 +70,14 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 8 - ((7 * winheight(0) + 19) / 38)
+let s:l = 120 - ((33 * winheight(0) + 19) / 38)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 8
-normal! 03|
+keepjumps 120
+normal! 062|
 wincmd w
+2wincmd w
 exe 'vert 1resize ' . ((&columns * 81 + 81) / 162)
 exe 'vert 2resize ' . ((&columns * 80 + 81) / 162)
 tabnext 1
