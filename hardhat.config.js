@@ -1,3 +1,7 @@
+require('dotenv').config()
+require('hardhat-abi-exporter');
+
+
 require("@nomiclabs/hardhat-waffle");
 require("@nomiclabs/hardhat-etherscan");
 
@@ -20,16 +24,26 @@ task("accounts", "Prints the list of accounts", async (taskArgs, hre) => {
  */
 module.exports = {
   solidity: "0.8.4",
+  abiExporter: {
+    path: './src/abi',
+    runOnCompile: true,
+    clear: true,
+    spacing: 2,
+    pretty: true,
+  },
   etherscan: {
     apiKey: {
-      mainnet: "YOUR_ETHERSCAN_API_KEY",
-      polygon: "YOUR_POLYGONSCAN_API_KEY",
-      bsc: "YOUR_BSCSCAN_API_KEY",
+      mainnet: process.env.ETHERSCAN_API_KEY,
+      polygon: process.env.POLYGON_API_KEY,
+      bsc: process.env.BSC_API_KEY,
+      opera: process.env.FANTOM_API_KEY,
+      avalanche: process.env.AVALANCHE_API_KEY,
 
-
-      rinkeby: "YOUR_ETHERSCAN_API_KEY",
-      polygonMumbai: "YOUR_POLYGONSCAN_API_KEY",
-      bscTestnet: "YOUR_BSCSCAN_API_KEY",
+      rinkeby: process.env.RINKEBY_TESTNET_API_KEY,
+      polygonMumbai: process.env.MUMBAI_TESTNET_API_KEY,
+      bscTestnet: process.env.BSC_TESTNET_API_KEY,
+      ftmTestnet: process.env.FANTOM_TESTNET_API_KEY,
+      avalancheFujiTestnet: process.env.FUJI_TESTNET_API_KEY,
 
     }
   }
