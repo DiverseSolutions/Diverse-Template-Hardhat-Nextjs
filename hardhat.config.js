@@ -3,6 +3,7 @@ require('hardhat-abi-exporter');
 
 // NatSpec Docs
 require('@primitivefi/hardhat-dodoc');
+require('hardhat-docgen');
 
 require("@nomiclabs/hardhat-waffle");
 require("@nomiclabs/hardhat-etherscan");
@@ -35,7 +36,13 @@ module.exports = {
   },
   dodoc: {
     runOnCompile: true,
+    freshOutput: true,
     outputDir: 'dodoc',
+  },
+  docgen: {
+    path: './docgen',
+    clear: true,
+    runOnCompile: true,
   },
   networks: {
     ethereum: {
