@@ -1,6 +1,8 @@
 require('dotenv').config()
 require('hardhat-abi-exporter');
 
+// NatSpec Docs
+require('@primitivefi/hardhat-dodoc');
 
 require("@nomiclabs/hardhat-waffle");
 require("@nomiclabs/hardhat-etherscan");
@@ -30,6 +32,10 @@ module.exports = {
     clear: true,
     spacing: 2,
     pretty: true,
+  },
+  dodoc: {
+    runOnCompile: true,
+    outputDir: 'dodoc',
   },
   networks: {
     ethereum: {
