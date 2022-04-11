@@ -45,6 +45,9 @@ module.exports = {
     runOnCompile: true,
   },
   networks: {
+    ganache:{
+      url: "http://127.0.0.1:7545",
+    },
     ethereum: {
       url: process.env.ETHEREUM_URL,
       chainId: 1,
