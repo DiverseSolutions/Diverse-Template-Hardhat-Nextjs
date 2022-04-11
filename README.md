@@ -24,3 +24,4 @@
  - Added Hardhat DoDoc & DocGen Plugins , for natspec smart contract documentations 🥺💕
    - Configured settings in Hardhat
    - Auto Compiles on Smart Contract Compile
+ - Added Dynamic Address Export To Sample Script For Template
