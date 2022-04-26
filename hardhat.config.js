@@ -35,14 +35,14 @@ module.exports = {
     pretty: true,
   },
   dodoc: {
-    runOnCompile: true,
+    runOnCompile: false,
     freshOutput: true,
     outputDir: 'dodoc',
   },
   docgen: {
     path: './docgen',
     clear: true,
-    runOnCompile: true,
+    runOnCompile: false,
   },
   networks: {
     ganache:{
